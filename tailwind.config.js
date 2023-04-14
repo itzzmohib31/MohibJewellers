@@ -10,6 +10,7 @@ module.exports = {
       center:true,
       padding:'2rem'
     },
+  
     fontFamily:{
       'poppins':['Poppins','sans-serif']
     },
