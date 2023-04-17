@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FaBars } from "react-icons/fa";
 import GoldBar from '../assets/goldbar.png'
-
+import Gold from './Gold';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -103,70 +103,11 @@ export default function Home() {
 
 
 </main>
-<div className='md:flex justify-between text-white text-2xl p-4 bg-yellow-500'>
-<div className='bg-slate-800  shadow-xl rounded flex items-center p-6 mt-2'>
-    
-    <div>
-      <Image
-     src={GoldBar}
-     alt="Picture of the author"
-     height={200}
-     width={200}
-   />
-      </div>
-      <div>
-      <h2 className='text-yellow-500  md:text-4xl'>Rs. 217800.00</h2>
-     <h4 className='text-xl'>24 Karat Gold Rate (1 Tola)</h4>
-      </div>
-  
-  
-   
-    </div>
 
-
-  <div className='bg-slate-800  shadow-xl rounded flex items-center p-6 mt-2'>
-    
-    <div>
-      <Image
-     src={GoldBar}
-     alt="Picture of the author"
-     height={200}
-     width={200}
-   />
-      </div>
-      <div>
-      <h2 className='text-yellow-500 md:text-4xl'>Rs. 217800.00</h2>
-     <h4 className='text-xl'>24 Karat Gold Rate (1 Tola)</h4>
-      </div>
-  
-  
-   
-    </div>
-
-    <div className='bg-slate-800  shadow-xl rounded flex items-center p-6 mt-2'>
-    
-    <div>
-      <Image
-     src={GoldBar}
-     alt="Picture of the author"
-     height={200}
-     width={200}
-   />
-      </div>
-      <div>
-      <h2 className='text-yellow-500 md:text-4xl'>Rs. 217800.00</h2>
-     <h4 className='text-xl'>24 Karat Gold Rate (1 Tola)</h4>
-      </div>
-  
-  
-   
-    </div>
-
-  
-</div>
+<Gold></Gold>
 
 <div className='w-100 p-4'>
-  <h1 className='text-4xl text-center text-gray-700'>Featured Products</h1>
+  <h1 className='text-4xl text-center text-gray-700'>Featured Designs</h1>
   <h4 className='text-xl text-center text-gray-700'>Find The Gift Of Your Dreams</h4>
 </div>
 
