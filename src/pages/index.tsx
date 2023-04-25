@@ -5,8 +5,7 @@ import Jewel1 from '../assets/jewel1.jpg';
 import {useEffect, useState} from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FaBars } from "react-icons/fa";
-import GoldBar from '../assets/goldbar.png'
-import Gold from './Gold';
+import GoldPage from './GoldPage';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -104,10 +103,10 @@ export default function Home() {
 
 </main>
 
-<Gold></Gold>
-
+<GoldPage></GoldPage>
 <div className='w-100 p-4'>
   <h1 className='text-4xl text-center text-gray-700'>Featured Designs</h1>
+  <hr className='bg-yellow-500 w-1/4 m-auto p-1 mt-1 rounded' ></hr>
   <h4 className='text-xl text-center text-gray-700'>Find The Gift Of Your Dreams</h4>
 </div>
 
@@ -187,6 +186,54 @@ export default function Home() {
 </div>
 
 
+<div className='w-100 p-6'>
+  <h1 className='text-4xl text-center text-gray-700'>MR Bridal</h1>
+  <hr className='bg-yellow-500 w-1/4 m-auto p-1 mt-1 rounded' ></hr>
+  <p className='text-xl text-center text-gray-500 md:w-1/2 m-auto'>For the promise of a lifetime, MR Jewellers offers the ultimate engagement and wedding rings, handcrafted using the rarest and most exceptional diamonds in the world. Fall brilliantly in love with the House’s unparalleled bridal jewelry offering.</p>
+
+  <div className='md:flex'>
+
+   <div>
+   <Image
+      src={HeroImg}
+      alt="Picture of the author"
+      width={600}
+      height={600}
+    />
+    <h2>The MR Bridal Guide</h2>
+    <p>
+    Discover the beauty, brilliance and legacy of Harry Winston diamond engagement and wedding jewelry. Like every great romance, it’s a story of passion, promise and sparkle.</p>
+   </div>
+
+   <div>
+   <Image
+      src={HeroImg}
+      alt="Picture of the author"
+      width={600}
+      height={600}
+    />
+    <h2>The MR Bridal Guide</h2>
+    <p>
+    Discover the beauty, brilliance and legacy of Harry Winston diamond engagement and wedding jewelry. Like every great romance, it’s a story of passion, promise and sparkle.</p>
+   </div>
+
+   <div>
+   <Image
+      src={HeroImg}
+      alt="Picture of the author"
+      width={600}
+      height={600}
+    />
+    <h2>The MR Bridal Guide</h2>
+    <p>
+    Discover the beauty, brilliance and legacy of Harry Winston diamond engagement and wedding jewelry. Like every great romance, it’s a story of passion, promise and sparkle.</p>
+   </div>
+
+
+  </div>
+
+
+</div>
 
     </div>
 
