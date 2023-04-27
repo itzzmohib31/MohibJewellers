@@ -1,38 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+To switch between production and local environments in Next.js, you need to make some changes to your code and configuration files.
 
-## Getting Started
+1. Update your environment variables:
+Create two files, `.env.local` and `.env.production` for local and production environments respectively. Define your environment variables in these files, and make sure to use different values for each environment.
 
-First, run the development server:
+2. Modify your `next.config.js` file:
+In your `next.config.js` file, you can use the `publicRuntimeConfig` property to define environment variables that should be available on the client side. Here's an example:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```js
+module.exports = {
+  publicRuntimeConfig: {
+    API_URL: process.env.API_URL,
+    SOME_OTHER_VARIABLE: process.env.SOME_OTHER_VARIABLE,
+  },
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Access environment variables in your code:
+   To access environment variables in your code, you can use the process.env object. 
+   
+```
+fetch(process.env.API_URL)
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+4. Use environment-specific code:
+   If you need to use environment-specific code, you can use conditional statements based on the environment variable values. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+if (process.env.NODE_ENV === "production") {
+  // do something in production environment
+} else {
+  // do something in local environment
+}
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+With these changes, your code should be able to switch between local and production environments based on the environment variables defined in your .env.local and .env.production files.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+      +---------------------+  Authentication  +----------------------+
+    |   Landing Page       | ---------------->|   Login/Signup Page    |
+    +---------------------+                  +----------------------+
+                                                  |
+                                                  v
+                                        +-----------------------+
+                                        |      User Database     |
+                                        +-----------------------+
+                                                  |
+                                                  v
+                              +-----------------------------------+
+                              |   Tools Dashboard                  |
+                              +-----------------------------------+
+                              |   Free Tools                       |
+                              |   Paid Tools (requires subscription)|
+                              +-----------------------------------+
+                                          |             ^
+                                          v             |
+                          +-------------------------------------+
+                          |   Subscription Page (Payment Gateway) |
+                          +-------------------------------------+
+                                          |
+                                          v
+                                   +--------------+
+                                   |  User Database|
+                                   +--------------+
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+In this updated UML diagram, the Tools Dashboard is where users can access both free and paid tools. Free tools will be available to all authenticated users, while paid tools will require a subscription.
