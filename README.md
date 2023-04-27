@@ -68,3 +68,6 @@ With these changes, your code should be able to switch between local and product
 ```
 
 In this updated UML diagram, the Tools Dashboard is where users can access both free and paid tools. Free tools will be available to all authenticated users, while paid tools will require a subscription.
+
+![image](https://user-images.githubusercontent.com/120586805/234814154-2fe5f9b8-213a-4c05-9976-9217041c3c82.png)
+
